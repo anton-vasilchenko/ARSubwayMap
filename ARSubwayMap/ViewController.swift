@@ -21,12 +21,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
+         
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +30,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
 
+        
+        let referenceImage = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil)
+        configuration.detectionImages = referenceImage
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -56,6 +55,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
 */
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let imageAnchor = anchor as? ARImageAnchor else {return}
+        
+        let referenceImage = imageAnchor.referenceImage
+        let image = UIImage(named: "MetroMap")
+
+        
+        let plane = SCNPlane(width: referenceImage.physicalSize.width * 5, height: referenceImage.physicalSize.height * 5)
+        plane.firstMaterial?.diffuse.contents = UIColor.white
+        let planeNode = SCNNode(geometry: plane)
+//        planeNode.opacity = 0.7
+        planeNode.eulerAngles.x = -Float.pi / 2
+//        planeNode.
+        planeNode.geometry?.firstMaterial?.diffuse.contents = image
+        node.addChildNode(planeNode)
+//        node.addChildNode(image)
+        
+        
+    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
