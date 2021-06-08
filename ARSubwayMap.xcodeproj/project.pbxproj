@@ -49,6 +49,7 @@
 		3AE8F9B1266F5122008716A7 /* ARSubwayMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARSubwayMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE8F9B5266F5122008716A7 /* ARSubwayMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSubwayMapUITests.swift; sourceTree = "<group>"; };
 		3AE8F9B7266F5122008716A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE8F9C3266F5B79008716A7 /* MetroMap.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MetroMap.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +105,7 @@
 				3AE8F997266F511F008716A7 /* ViewController.swift */,
 				3AE8F999266F511F008716A7 /* Main.storyboard */,
 				3AE8F99C266F5121008716A7 /* Assets.xcassets */,
+				3AE8F9C3266F5B79008716A7 /* MetroMap.jpeg */,
 				3AE8F99E266F5121008716A7 /* LaunchScreen.storyboard */,
 				3AE8F9A1266F5121008716A7 /* Info.plist */,
 			);
